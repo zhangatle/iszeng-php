@@ -1,11 +1,8 @@
 <?php
 
-
 namespace app\controllers;
 
-
 use core\Base;
-use function MongoDB\BSON\toJSON;
 
 class BaseController extends Base
 {
@@ -16,7 +13,7 @@ class BaseController extends Base
             "msg" => $msg,
             "data" => $data
         ];
-        exit(json_encode($res));
+        echo json_encode($res);exit;
     }
 
     public function fail($code=999, $msg="fail") {
@@ -26,6 +23,6 @@ class BaseController extends Base
             "msg" => $msg,
             "data" => []
         ];
-        return exit(json_encode($res));
+        echo json_encode($res);exit;
     }
 }

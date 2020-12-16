@@ -1,6 +1,5 @@
 <?php
 namespace core\lib;
-use core\lib\conf;
 
 class log{
     static $class;

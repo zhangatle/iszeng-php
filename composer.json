@@ -6,13 +6,6 @@
     "PHP","PHP Framework"
   ],
   "require":{
-    "php":">=7.1.0",
-    "filp/whoops":"^2.9",
-    "symfony/var-dumper":"^5.2",
-    "catfan/medoo":"^1.7",
-    "twig/twig":"^3.1",
-    "ext-pdo": "*",
-    "ext-redis": "*",
-    "ext-json": "*"
+    "php":">=7.1.0"
   }
 }

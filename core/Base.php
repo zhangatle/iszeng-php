@@ -3,8 +3,6 @@ namespace core;
 
 use core\lib\log;
 use core\lib\route;
-use Twig\Environment;
-use Twig\Loader\FilesystemLoader;
 
 class Base{
     public static  $classMap = array();
@@ -59,27 +57,5 @@ class Base{
      */
     public function assign($name,$value){
         $this->assign[$name] = $value;
-    }
-
-    /**
-     * 模板加载渲染
-     * @param $file
-     */
-    public function display($file){
-        $filename = $file;
-        $file = APP.'/view/'.$file;
-        if(is_file($file)){
-            $loader = new FilesystemLoader(APP."/view");
-            $twig = new Environment($loader,array(
-                'cache'=>KEEN.'/log/twig',
-                'debug'=>DEBUG
-            ));
-            try {
-                $template = $twig->load($filename);
-                $template->display($this->assign ? $this->assign : array());
-            } catch (\Exception $e) {
-                log::log("模板加载错误");
-            }
-        }
     }
 }
